@@ -1,7 +1,6 @@
 fs
 ---
 
-4 readdir
 lstat
 4 chmod
 createReadStream
