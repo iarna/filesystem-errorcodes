@@ -10,7 +10,6 @@ createReadStream
 3 writeFile
 unlink
 rename
-rmdir
 access
 close
 open

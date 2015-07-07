@@ -22,6 +22,13 @@ Filesystem Errorcodes
   * no permission to create _dir_
     * `EACCES`
 
+### fs.rmdir(_dir_, cb)
+
+  * _dir_ does not exist
+    * `ENOENT`
+  * no permission to remove _dir_
+    * `EACCES`
+
 Assumptions
 -----------
 
