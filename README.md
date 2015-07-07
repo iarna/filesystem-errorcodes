@@ -15,6 +15,13 @@ Filesystem Errorcodes
   * no permission to read _dir_
     * `EACCES`
 
+### fs.mkdir(_dir_, cb)
+
+  * _dir_ does not exist
+    * `ENOENT`
+  * no permission to create _dir_
+    * `EACCES`
+
 Assumptions
 -----------
 

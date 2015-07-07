@@ -21,7 +21,6 @@ unlink
 symlink
 fstat
 readlink
-mkdir
 
 mkdirp
 ------
