@@ -28,12 +28,22 @@ test('setup', function (t) {
 
 test('rename', function (t) {
   t.plan(2)
-  throws(t, 'ENOTEMPTY', 'dest dir exists', function () {
-    fs.renameSync(testfromdir, testexistsdir)
-  })
-  throws(t, 'EACCES', 'no permissions', function () {
-    fs.renameSync(testfromdir, testnopermsubdir)
-  })
+  if (os.platform() === 'win32') {
+    throws(t, 'EPERM', 'dest dir exists', function () {
+      fs.renameSync(testfromdir, testexistsdir)
+    })
+  } else {
+    throws(t, 'ENOTEMPTY', 'dest dir exists', function () {
+      fs.renameSync(testfromdir, testexistsdir)
+    })
+  }
+  if (os.platform() === 'win32') {
+    t.pass("# SKIP - we can't currently do perm checks on windows")
+  } else {
+    throws(t, 'EACCES', 'no permissions', function () {
+      fs.renameSync(testfromdir, testnopermsubdir)
+    })
+  }
 })
 
 test('cleanup', function (t) {
