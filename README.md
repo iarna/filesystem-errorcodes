@@ -29,6 +29,17 @@ Filesystem Errorcodes
   * no permission to remove _dir_
     * `EACCES`
 
+### fs.rename(from, to)
+
+  * _from_ is a directory and to exists (WINDOWS)
+    * `EPERM`
+  * _from_ and _to_ are directories and _to_ contains files (NON-WINDOWS)
+    * `ENOTEMPTY`
+  * can't write to the parent folder of _to_ (WINDOWS)
+    * `EPERM`
+  * can't write to the parent folder of _to_ (NON-WINDOWS)
+    * `EACCES`
+
 Assumptions
 -----------
 
