@@ -29,7 +29,7 @@ Filesystem Errorcodes
   * no permission to remove _dir_
     * `EACCES`
 
-### fs.rename(from, to)
+### fs.rename(_from_, _to_, cb)
 
   * _from_ is a directory and to exists (WINDOWS)
     * `EPERM`
